@@ -49,8 +49,11 @@ def scrape_page(url):
         address_element = listing.find('a', class_='subtitle-beta')
         address = address_element.text.strip() if address_element else 'Address not found'
 
-        base_address=listing.find('div', class_='header-col')
-        base_address=base_address.find('a').text
+        url_parts = url.split('/')
+        for part in url_parts:
+            if '-' in part and 'Listing' not in part and part.isalnum() == False:
+                base_address = part
+                break
         page_listings.append({'url': url, 'address': address,'detail_address': base_address})
 
     return page_listings, soup
