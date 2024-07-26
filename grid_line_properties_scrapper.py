@@ -49,7 +49,9 @@ def scrape_page(url):
         address_element = listing.find('a', class_='subtitle-beta')
         address = address_element.text.strip() if address_element else 'Address not found'
 
-        page_listings.append({'url': url, 'address': address})
+        base_address=listing.find('div', class_='header-col')
+        base_address=base_address.find('a').text
+        page_listings.append({'url': url, 'address': address,'detail_address': base_address})
 
     return page_listings, soup
 
