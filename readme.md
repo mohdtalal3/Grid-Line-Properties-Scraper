@@ -20,11 +20,9 @@ This project is a web scraping tool designed to collect real estate listings fro
 
 ## Usage
 
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/mohdtalal3/Grid-Line-Properties-Scraper.git
-
+1. **Unzip the file:**
+    Go to the folder where there are all files and follow next steps.
+    
 2. **Install dependencies:**
     ```bash
     pip install -r requirements.txt
@@ -37,7 +35,7 @@ This project is a web scraping tool designed to collect real estate listings fro
 4. **Output:**
     The scraper will collect the listings and generate two files:
 
-    `grid_line_properties.csv`: Contains the filtered listings with URLs and addresses.
+    `grid_line_properties.json`: Contains the filtered listings with URLs and addresses.
     `grid_line_properties_addresses_matching_listings.txt`: Contains the addresses used and not used, along with a summary of the total, matching, and non-matching listings.
 
 ## Sample files also attached

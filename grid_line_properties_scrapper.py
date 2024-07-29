@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import pandas as pd
+
 def get_total_pages(soup):
     paging = soup.find('ol', class_='paging')
     if paging:
@@ -35,11 +36,15 @@ def scrape_page(url):
         response.raise_for_status() 
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
-        exit()
+        return None, None
 
     soup = BeautifulSoup(response.content, 'html.parser')
     # Find all listing boxes
     listings = soup.find_all('article', class_='placard')
+
+    if not listings:
+        print("No entries found on this page.")
+        return None, soup
 
     page_listings = []
     for listing in listings:
@@ -54,7 +59,8 @@ def scrape_page(url):
             if '-' in part and 'Listing' not in part and part.isalnum() == False:
                 base_address = part
                 break
-        page_listings.append({'url': url, 'address': address,'detail_address': base_address})
+        address=f"{base_address}, {address}"
+        page_listings.append({'address': address,'url': url })
 
     return page_listings, soup
 
@@ -70,10 +76,14 @@ cities = [
 ]
 
 all_listings = []
-matching_listings = []
 
 # Start with the first page
 first_page_listings, first_page_soup = scrape_page(base_url.format(1))
+
+if first_page_listings is None:
+    print("No entries found. Exiting program.")
+    exit()
+
 all_listings.extend(first_page_listings)
 
 # Get total number of pages
@@ -84,10 +94,16 @@ print(f"Total pages: {total_pages}")
 for page in range(2, total_pages + 1):
     print(f"Scraping page {page}...")
     page_listings, _ = scrape_page(base_url.format(page))
-    all_listings.extend(page_listings)
+    if page_listings:
+        all_listings.extend(page_listings)
     time.sleep(4)  # Add a delay to be respectful to the server
 
+if not all_listings:
+    print("No entries found across all pages. Exiting program.")
+    exit()
+
 # Process all listings
+matching_listings = []
 for listing in all_listings:
     if any(city.lower() in listing['address'].lower().replace(',', '').split() for city in cities):
         matching_listings.append(listing)
@@ -97,7 +113,7 @@ used_addresses = set(listing['address'] for listing in matching_listings)
 unused_addresses = set(listing['address'] for listing in all_listings) - used_addresses
 
 df = pd.DataFrame(matching_listings)
-df.to_csv('grid_line_properties.csv', index=False)
+df.to_json('grid_line_properties.json', orient='records', indent=4)
 
 file_path = 'grid_line_properties addresses_matching_listings.txt'
 
@@ -115,4 +131,4 @@ with open(file_path, 'w') as file:
     file.write(f"Matching listings: {len(matching_listings)}\n")
     file.write(f"Non-matching listings: {len(all_listings) - len(matching_listings)}\n")
 
-print(f"Text file and Csv file has been saved.")
+print(f"Text file and JSON file have been saved.")
