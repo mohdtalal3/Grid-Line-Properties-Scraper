@@ -1,30 +1,29 @@
 Addresses Used:
-7501-7503-NW-7th-Ave-Miami-FL, Miami, FL 33150
-1690-NE-134th-St-North-Miami-FL, North Miami, FL 33181
-2650-SW-27th-Ave-Miami-FL, Miami, FL 33133
-92-NW-27th-st-Miami-FL, Miami, FL 33127
-850-856-NW-71st-St-Miami-FL, Miami, FL 33150
-3430-N-Miami-Ave-Miami-FL, Miami, FL 33127
-523-529-NW-28th-St-Miami-FL, Miami, FL 33127
 9101-Biscayne-Blvd-Miami-FL, Miami, FL 33138
-2721-NW-1st-Avenue-Miami-FL, Miami, FL 33127
+1486-NW-23rd-St-Miami-FL, Miami, FL 33142
+2721-2727-NW-1st-ave-Miami-FL, Miami, FL 33127
+1195-NW-71st-St-Miami-FL, Miami, FL 33150
+401-NW-79th-St-Miami-FL, Miami, FL 33150
+178-NW-54th-St-Miami-FL, Miami, FL 33127
 2319-NW-18th-Ave-Miami-FL, Miami, FL 33142
+92-NW-27th-st-Miami-FL, Miami, FL 33127
+41-NW-20th-St-Miami-FL, Miami, FL 33127
 7618-7624-NE-2nd-Ave-Miami-FL, Miami, FL 33138
+2721-NW-1st-Avenue-Miami-FL, Miami, FL 33127
+97-NW-27th-St-Miami-FL, Miami, FL 33127
+7501-7503-NW-7th-Ave-Miami-FL, Miami, FL 33150
+523-545-NE-125th-St-North-Miami-FL, North Miami, FL 33161
 320-NW-29th-St-Miami-FL, Miami, FL 33127
 148-NW-28th-St-Miami-FL, Miami, FL 33127
-97-NW-27th-St-Miami-FL, Miami, FL 33127
-178-NW-54th-St-Miami-FL, Miami, FL 33127
-2721-2727-NW-1st-ave-Miami-FL, Miami, FL 33127
+523-529-NW-28th-St-Miami-FL, Miami, FL 33127
 235-257-NE-79th-St-Miami-FL, Miami, FL 33138
-401-NW-79th-St-Miami-FL, Miami, FL 33150
+1690-NE-134th-St-North-Miami-FL, North Miami, FL 33181
+3430-N-Miami-Ave-Miami-FL, Miami, FL 33127
+850-856-NW-71st-St-Miami-FL, Miami, FL 33150
 124-136-S-Federal-Hwy-Hallandale-Beach-FL, Hallandale Beach, FL 33009
-1195-NW-71st-St-Miami-FL, Miami, FL 33150
-1486-NW-23rd-St-Miami-FL, Miami, FL 33142
-523-545-NE-125th-St-North-Miami-FL, North Miami, FL 33161
-41-NW-20th-St-Miami-FL, Miami, FL 33127
 
 Addresses Not Used:
 
-Total listings: 23
-Matching listings: 23
+Total listings: 22
+Matching listings: 22
 Non-matching listings: 0

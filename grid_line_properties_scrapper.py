@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import pandas as pd
-
+import json
 def get_total_pages(soup):
     paging = soup.find('ol', class_='paging')
     if paging:
@@ -113,8 +113,15 @@ used_addresses = set(listing['address'] for listing in matching_listings)
 unused_addresses = set(listing['address'] for listing in all_listings) - used_addresses
 
 df = pd.DataFrame(matching_listings)
-df.to_json('grid_line_properties.json', orient='records', indent=4)
-
+with open('grid_line_properties.json', 'w') as f:
+    records = df.to_dict(orient='records')
+    for i, record in enumerate(records):
+        json.dump(record, f)
+        if i < len(records) - 1:
+            f.write(',\n')
+        else:
+            f.write('\n')
+            
 file_path = 'grid_line_properties addresses_matching_listings.txt'
 
 # Open the file in write mode and write the contents
